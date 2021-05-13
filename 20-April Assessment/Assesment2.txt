@@ -1,0 +1,94 @@
+1. Explain Autowiring and different types of Autowiring?
+   -->	Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection. 
+	Autowiring can't be used to inject primitive and string values. It works with reference only.
+ 
+	Different types of autowiring: 
+	No: It is the default autowiring mode. It means no autowiring bydefault. 
+	ByName: The byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. It internally calls setter method. 
+	ByType: The byType mode injects the object dependency according to type. So property name and bean name can be different. It internally calls setter method. 
+	Constructor: The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters. 
+	Autodetect:for auto detecting the field. 
+
+
+2. Explain Autowiring byType and its syntax?
+   --> 	Autowiring byType mode injects the object dependency according to type. So property name and bean name can be different. 
+	It internally calls setter method.
+	Syntax:
+	<bean id = "textEditor" class = "com.model" autowire = "byType">
+	<property name = "name" value = "Department" />
+	</bean> 
+
+3. Explain Autowiring byName and its syntax?
+   --> 	Autowiring byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. 
+	It internally calls setter method. 
+	Syntax:
+	<bean id = "textEditor" class = "com.model" autowire = "byName">
+	<property name = "name" value = "departmentid" />
+	</bean> 
+
+4. Explain Constructor Injection and its importance?
+   --> 	The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters. 
+	Autodetect:for auto detecting the field.
+	Syntax:
+	<bean id="empid" class="com.constructormode.Employee" autowire="constructor">
+	<constructor-arg name="eid" value="202"></constructor-arg>
+	<constructor-arg name="ename" value ="rachel"></constructor-arg>
+	<constructor-arg> <ref bean="dept1"/> </constructor-arg>
+	</bean>
+
+5. Explain different types of Collection Objects (ex: List, Set, Map and Properties)
+   -->	The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+	Java Collection means a single unit of objects. Collection framework provides many interfaces like Set, List, Map
+	and classes like ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet, HashMap, LinkedHashMap.
+	List: 
+	List is an Inteface in java and child interface of Collection which is present in java.util package.
+	If we want to represent a group of individual objects as a single entity 
+	where "duplicates are allow and insertion order must be preserved" then we should go for List interface.
+	Vector and Stack classes are re-engineered in 1.2 versions to implement List interface.
+	
+	Set:
+	It is the child interface of Collection which is present in java.util package.
+	If we want to represent a group of individual objects as single entity "where duplicates are not allow and insertion order is not preserved" then we should go for Set interface.
+	Set has child intefaces and child classes which are implemented (SortedSet and NavigableSet)and inherited by Set interface (HashSet, LinkedHashSet and TreeSet)
+	
+	Map:
+	If we want to represent a group of objects as key-value pairs then we should go for Map.
+	Map is not child interface of Collection.
+	If we want to represent a group of objects as key-value pairs then we should go for Map interface.
+	Duplicate keys are not allowed but values can be duplicated.
+	Map Interface also have many child classes (HashMap, LinkedHashMap, TreeMap, IdentityHashMap and WeakHashMap, Dictionary (It is an Abstract Class), hashTable and Properties) and child interfaces (SortedMap and NavigableMap).
+	 
+
+	Properties: 
+	We also have a Properties class which is also in java.util package. It is a subclass of Hashtable.
+	It is used to maintain a list of values in which the key is a string and the value is also a string i.e; it can be used to store and retrieve string type data from the properties file.
+	Properties class can specify other properties list as it’s the default. If a particular key property is not present in the original Properties list, the default properties will be searched.
+	Properties object does not require external synchronization and Multiple threads can share a single Properties object.
+	Also, it can be used to retrieve the properties of the system.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

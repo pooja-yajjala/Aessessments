@@ -1,0 +1,63 @@
+1)What is spring framework? 
+
+Spring is the most popular application development framework for enterprise Java. Millions of developers around the world use Spring Framework to create high performing, easily testable, and reusable code. 
+
+Spring framework is an open source Java platform. It was initially written by Rod Johnson and was first released under the Apache 2.0 license in June 2003. 
+
+Spring is lightweight when it comes to size and transparency. The basic version of Spring framework is around 2MB. 
+
+The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make J2EE development easier to use and promotes good programming practices by enabling a POJO-based programming model. 
+
+2)Explain Dependency Injection ? 
+
+dependency injection is a technique in which an object receives other objects that it depends on. These other objects are called dependencies. 
+
+passing the required parameters to the pojo class. 
+
+types of dependency injection: 
+
+Setter injection : The spring container uses setter method in the dependent class for injecting its dependencies (primitive values..Or any). 
+
+Construction injection : Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on the other class. 
+
+3)What is IOC Container?  
+
+The Spring container is at the core of the Spring Framework.  
+
+The container will create the objects, wire them together, configure them, and manage their complete life cycle from creation till destruction.  
+
+The Spring container uses DI to manage the components that make up an application.  
+
+These objects are called Spring Beans. 
+
+4)What is BeanFactory?  
+
+It is one of the ioc container 
+
+The XmlBeanFactory is the implementation class for the BeanFactory interface. To use the BeanFactory, we need to create the instance of XmlBeanFactory class as given below: 
+
+Resource resource=new ClassPathResource("applicationContext.xml");   
+
+BeanFactory factory=new XmlBeanFactory(resource);   
+
+The constructor of XmlBeanFactory class receives the Resource object so we need to pass the resource object to create the object of BeanFactory. 
+
+ 
+
+5)Explain Autowiring?Different types of autowiring? 
+
+Autowiring feature of spring framework enables you to inject the object dependency implicitly. It internally uses setter or constructor injection. 
+
+Autowiring can't be used to inject primitive and string values. It works with reference only. 
+
+         Different types of autowiring: 
+
+No: It is the default autowiring mode. It means no autowiring bydefault. 
+
+ByName: The byName mode injects the object dependency according to name of the bean. In such case, property name and bean name must be same. It internally calls setter method. 
+
+ByType: The byType mode injects the object dependency according to type. So property name and bean name can be different. It internally calls setter method. 
+
+Constructor: The constructor mode injects the dependency by calling the constructor of the class. It calls the constructor having large number of parameters. 
+
+Autodetect:for auto detecting the field. 
